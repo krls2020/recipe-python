@@ -9,7 +9,7 @@ zerops:
     run:
       base: python@3.12
       prepareCommands:
-        - apk add postgresql-dev
+        - sudo apk add postgresql-dev
         - python3 -m pip install --ignore-installed -r requirements.txt
       start: python3 app.py
       ports:
