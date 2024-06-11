@@ -1,6 +1,7 @@
 zerops:
   - setup: api
     build:
+      os: ubuntu
       base: python@3.12
       deploy:
         - ./app.py
