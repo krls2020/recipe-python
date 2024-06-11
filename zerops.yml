@@ -3,9 +3,9 @@ zerops:
     build:
       base: python@3.12
       deploy:
-        - python/~app.py
+        - ./app.py
       addToRunPrepare:
-        - python/requirements.txt
+        - ./requirements.txt
     run:
       base: python@3.12
       prepareCommands:
