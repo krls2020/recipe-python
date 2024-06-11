@@ -4,9 +4,9 @@ zerops:
       os: ubuntu
       base: python@3.12
       deploy:
-        - ./app.py
+        - app.py
       addToRunPrepare:
-        - ./requirements.txt
+        - requirements.txt
     run:
       os: ubuntu
       base: python@3.12
