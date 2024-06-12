@@ -31,4 +31,7 @@ Further things to think about when running more complex, highly available Python
 
 - Containers are volatile - use Zerops object storage to store your files
 - Use Zerops Redis (KeyDB) for caching, storing sessions and pub/sub messaging
-- Use more advanced logging lib, such as [Logrus](https://github.com/sirupsen/logrus), [Zap](https://github.com/uber-go/zap) or [ZeroLog](https://github.com/rs/zerolog)
+- Use more advanced logging lib, such as [loguru](https://github.com/Delgan/loguru), or [structlog](https://github.com/hynek/structlog)
+
+
+
