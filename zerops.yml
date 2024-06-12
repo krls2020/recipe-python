@@ -1,14 +1,12 @@
 zerops:
   - setup: api
     build:
-#      os: ubuntu
       base: python@3.12
       deploy:
         - app.py
       addToRunPrepare:
         - requirements.txt
     run:
-#      os: ubuntu
       base: python@3.12
       prepareCommands:
         - python3 -m pip install --ignore-installed -r requirements.txt
