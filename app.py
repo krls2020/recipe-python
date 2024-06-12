@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from waitress import serve
 import os
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
@@ -33,6 +34,7 @@ def init_db():
 
 @app.route('/')
 def add_entry():
+    # INSERT RANDOM DATA
     random_data = str(uuid.uuid4())
     conn = psycopg2.connect(host=db_host, port=db_port, dbname=db_name, user=db_user, password=db_pass)
     cur = conn.cursor()
@@ -58,9 +60,5 @@ def status_check():
     return jsonify(status="UP")
 
 if __name__ == '__main__':
-    # Initialize the database and tables
     init_db()
-
-    # Start the Flask application
-    from waitress import serve
     serve(app, host="0.0.0.0", port=8000)
