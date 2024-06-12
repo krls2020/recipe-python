@@ -3,6 +3,7 @@ import os
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import uuid
+import logging
 
 app = Flask(__name__)
 
@@ -40,6 +41,15 @@ def add_entry():
     conn.commit()
     cur.close()
     conn.close()
+
+    // LOGGER
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    logger = logging.getLogger(__name__)
+    logger.debug("This is a debug message")
+    logger.info("This is an info message")
+    logger.warning("This is a warning message")
+    logger.error("This is an error message")
+    logger.log(logging.INFO, "This is a standard log message using the log method")
 
     return jsonify(message="Entry added successfully.", id=entry_id, data=random_data)
 
