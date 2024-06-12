@@ -34,7 +34,7 @@ def init_db():
 
 @app.route('/')
 def add_entry():
-    # INSERT RANDOM DATA
+    # Insert random data
     random_data = str(uuid.uuid4())
     conn = psycopg2.connect(host=db_host, port=db_port, dbname=db_name, user=db_user, password=db_pass)
     cur = conn.cursor()
@@ -44,7 +44,7 @@ def add_entry():
     cur.close()
     conn.close()
 
-    # LOGGER
+    # Logger
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     logger = logging.getLogger(__name__)
     logger.debug("This is a debug message")
